@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Instagram Button</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f5f5f5;
+    }
+    .circle-btn {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background-color: green;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      transition: transform 0.2s;
+    }
+    .circle-btn:active {
+      transform: scale(0.95);
+    }
+  </style>
+</head>
+<body>
+
+<button class="circle-btn" onclick="openInstagram()"></button>
+
+<script>
+  function openInstagram() {
+    // Try opening the Instagram app
+    window.location.href = "instagram://app";
+
+    // Fallback: open Instagram website if app not found
+    setTimeout(function() {
+      window.location.href = "https://instagram.com";
+    }, 1000);
+  }
+</script>
+
+</body>
+</html>

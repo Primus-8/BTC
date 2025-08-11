@@ -28,18 +28,20 @@
 </head>
 <body>
 
-<button class="circle-btn" onclick="openInstagram()"></button>
+<button class="circle-btn" id="instaBtn"></button>
 
 <script>
-  function openInstagram() {
-    // Try opening the Instagram app
-    window.location.href = "instagram://app";
+  document.getElementById("instaBtn").addEventListener("click", function () {
+    const username = "sudama_yaduvansh"; // aapka Instagram username
 
-    // Fallback: open Instagram website if app not found
-    setTimeout(function() {
-      window.location.href = "https://instagram.com";
+    // Instagram app open karne ka try
+    window.location.href = `instagram://user?username=${username}`;
+
+    // Agar app nahi mili to 1 sec baad website open kare
+    setTimeout(() => {
+      window.location.href = `https://instagram.com/${username}`;
     }, 1000);
-  }
+  });
 </script>
 
 </body>
